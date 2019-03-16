@@ -3,23 +3,21 @@
 
 	<head>
 	<title>My Posts</title>
+	<link rel="stylesheet" href="/css/loginStyling.css"/>
 	</head>
 	
 	<body>
-	    <font color="red">${errorMessage}</font>
 	    <form method="post">
 	        Search : <input type="text" name="searchContent" />
-	        <input type="submit" />
+	        <button type="submit">Search</button>
+	        <font color="red">${errorMessage}</font>
 	    </form>
-	    <BR/> 
-	    <font color="blue">${emptySearchMessage}</font>
+	    <h3>Search Results:</h3>
+	    <font color="blue" class="emptyMessage">${emptySearchMessage}</font>
 	    <c:forEach items="${posts}" var="element"> 
-	  		<tr>
 	    	<ul>"${element.content}" by ${element.user.userName }</ul>
 		</c:forEach>
-	    <BR/>
-	    <BR/> 
-    	<a href="/home">Back to home</a>
+    	<a href="/home" class="back">Back to home</a>
     </body>
 
 </html>

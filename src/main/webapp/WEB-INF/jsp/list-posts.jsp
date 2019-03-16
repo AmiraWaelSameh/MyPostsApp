@@ -3,29 +3,25 @@
 
 <head>
 <title>My Posts</title>
+<link rel="stylesheet" href="/css/loginStyling.css"/>
 </head>
 
 <body>
-    ${user.userName}, here are the list of your Posts:
-    <BR/> 
+    <h1>${user.userName}, here is the list of your Posts:</h1>
     <c:forEach items="${posts}" var="element"> 
-  		<tr>
     	<ul>${element.content}</ul>
 	</c:forEach>
-    <BR/>
-    <BR/> 
     <form method="post">
         New status : <input type="text" name="postContent" />
         <select name="selectedStatus">
-		<c:forEach items="${availableStatuses}" var="status">
-		    <option value="${status}">${status}</option>
-		</c:forEach>
+			<c:forEach items="${availableStatuses}" var="status">
+			    <option value="${status}">${status}</option>
+			</c:forEach>
 		</select>
-        <input type="submit" />
+        <button type="submit">Add</button>
+        <font color="red">${errorMessage}</font>
     </form>	
-	<BR/>
-	<BR/> 
-    <a href="/home">Back to home</a>    
+    <a href="/home" class="back">Back to home</a>    
 </body>
 
 </html>

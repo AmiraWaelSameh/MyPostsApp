@@ -35,7 +35,7 @@ public class HomeController {
 
 		if (result == null) {
 			model.put("errorMessage", "Invalid Credentials");
-			return LOGIN_REDIRECT;
+			return "/login";
 		}
 
 		model.put("user", result);

@@ -20,8 +20,9 @@ import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.
 @Controller
 @SessionAttributes({ "user", "availableStatuses" })
 public class PostController {
+	private static final String LIST_POSTS = "list-posts";
 	private static final String POSTS_KEY = "posts";
-	private static final String SEARCH_REDIRECT = "search";
+	private static final String SEARCH = "search";
 	private static final String LOGIN_REDIRECT = "redirect:/login";
 	@Autowired
 	PostService postService;
@@ -37,7 +38,7 @@ public class PostController {
 		}
 		model.put(POSTS_KEY, postService.retrievePosts(currentUser));
 		model.put("availableStatuses", postService.getAvailableStatuses());
-		return "list-posts";
+		return LIST_POSTS;
 	}
 
 	private User getUser(ModelMap model) {
@@ -53,11 +54,15 @@ public class PostController {
 		if (currentUser == null) {
 			return LOGIN_REDIRECT;
 		}
-		Post post = new Post(postContent, StatusType.fromString(selectedStatus), new Date(System.currentTimeMillis()),
-				currentUser);
-		postService.create(post);
+		if (postContent == null || postContent.trim().isEmpty()) {
+			model.put("errorMessage", "Post content cannot be empty.");
+		} else {
+			Post post = new Post(postContent, StatusType.fromString(selectedStatus),
+					new Date(System.currentTimeMillis()), currentUser);
+			postService.create(post);
+		}
 		model.put(POSTS_KEY, postService.retrievePosts(currentUser));
-		return "list-posts";
+		return LIST_POSTS;
 	}
 
 	@GetMapping(value = "/search")
@@ -66,7 +71,7 @@ public class PostController {
 		if (currentUser == null) {
 			return LOGIN_REDIRECT;
 		}
-		return SEARCH_REDIRECT;
+		return SEARCH;
 	}
 
 	@PostMapping(value = "/search")
@@ -77,7 +82,7 @@ public class PostController {
 		}
 		if (searchContent == null || searchContent.trim().isEmpty()) {
 			model.put("errorMessage", "Search words cannot be empty.");
-			return SEARCH_REDIRECT;
+			return SEARCH;
 		}
 		List<Post> result = new ArrayList<>();
 		searchService.searchPublicPosts(searchContent).forEach(result::add);
@@ -86,6 +91,6 @@ public class PostController {
 			model.put("emptySearchMessage", "No posts matched your search keywords.");
 		}
 
-		return SEARCH_REDIRECT;
+		return SEARCH;
 	}
 }

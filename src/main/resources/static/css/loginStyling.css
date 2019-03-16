@@ -1,0 +1,86 @@
+
+h1{
+    text-align: center;
+    font-family: cursive;
+    color: darkgreen;
+    font-size: 44;
+}
+h3{
+	padding-left:25%;
+    font-family: cursive;
+    color: darkgreen;
+    font-size: 34;
+}
+.emptyMessage{
+	padding-left:35%;
+    font-family: cursive;
+    color: red;
+    font-size: 24;
+}
+ul{
+	text-align: center;
+    font-family: cursive;
+    color: black;
+    font-size: 24;
+}
+.back{
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 3px solid #73AD21;
+}
+form, .left-element, .right-element{
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+form input, form select {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+form button, div button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.left-element {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+
+.right-element {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+body {
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
