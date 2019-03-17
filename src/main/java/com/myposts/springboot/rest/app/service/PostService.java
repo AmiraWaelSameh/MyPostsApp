@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,6 @@ public class PostService {
 		Post probe = new Post();
 		probe.setStatus(StatusType.PUBLIC);
 		postRepo.findAll(Example.of(probe)).forEach(posts::add);
-		return posts.stream().filter(post -> post.getContent().contains(search)).collect(Collectors.toList());
+		return posts.stream().filter(post -> StringUtils.containsIgnoreCase(post.getContent(),search)).collect(Collectors.toList());
 	}
 }

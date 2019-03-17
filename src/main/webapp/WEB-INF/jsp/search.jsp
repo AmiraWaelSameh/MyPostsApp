@@ -14,7 +14,7 @@
 	        <button>Search</button>
 	    </form>
 	    <h3></h3>
-	    <font color="blue" id="emptyMessage"></font>
+	    <font id="emptyMessage"></font>
 	    <div id="searchResults">
 	    </div>
     	<a href="/home" class="back">Back to home</a>

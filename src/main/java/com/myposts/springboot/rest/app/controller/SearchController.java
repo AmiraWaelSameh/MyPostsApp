@@ -18,8 +18,9 @@ public class SearchController {
 
 	@GetMapping(value = "/search/{searchContent}")
 	public List<Post> searchPublicPosts(@PathVariable String searchContent) {
-		List<Post> result = new ArrayList<>();
+		List<Post> result = null;
 		if (searchContent != null && !searchContent.trim().isEmpty()) {
+			result = new ArrayList<>();
 			searchService.searchPublicPosts(searchContent).forEach(result::add);
 		} else {
 			throw new RuntimeException("search cannot be empty");

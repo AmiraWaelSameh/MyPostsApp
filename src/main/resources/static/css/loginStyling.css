@@ -11,7 +11,7 @@ h3{
     color: darkgreen;
     font-size: 34;
 }
-.emptyMessage{
+#emptyMessage{
 	padding-left:35%;
     font-family: cursive;
     color: red;
