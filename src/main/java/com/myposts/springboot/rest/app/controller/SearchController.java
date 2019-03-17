@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.myposts.springboot.rest.app.model.Post;
 import com.myposts.springboot.rest.app.service.PostService;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 public class SearchController {
@@ -17,6 +18,7 @@ public class SearchController {
 	PostService searchService;
 
 	@GetMapping(value = "/search/{searchContent}")
+	@ApiOperation(value = "search public posts", notes = "search all public posts for any m atch of the search content (case sensitive)")
 	public List<Post> searchPublicPosts(@PathVariable String searchContent) {
 		List<Post> result = new ArrayList<>();
 		if (searchContent != null && !searchContent.trim().isEmpty()) {

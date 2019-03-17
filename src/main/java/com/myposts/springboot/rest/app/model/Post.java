@@ -8,7 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description = "Post added by a user")
 public class Post {
 	@Id
 	@GeneratedValue
@@ -18,6 +22,7 @@ public class Post {
 	private Date dateCreated;
 	@ManyToOne
 	@JoinColumn(name = "user_id")
+	@ApiModelProperty(notes = "Connecting the owner of the post")
 	private User user;
 
 	public Post() {
