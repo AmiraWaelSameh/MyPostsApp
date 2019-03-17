@@ -1,10 +1,10 @@
-package com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.repositories;
+package com.myposts.springboot.rest.app.repositories;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.model.Post;
+import com.myposts.springboot.rest.app.model.Post;
 
 @Repository
 public interface PostRepository extends CrudRepository<Post, Long> {

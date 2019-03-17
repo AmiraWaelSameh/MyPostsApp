@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2;
+package com.myposts.springboot.rest.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -8,11 +8,11 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.in28minutes.springboot.rest.example</groupId>
-	<artifactId>spring-boot-2-jpa-with-hibernate-and-h2</artifactId>
+	<groupId>com.myposts.springboot.rest.app</groupId>
+	<artifactId>mypostsapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-2-jpa-with-hibernate-and-h2</name>
-	<description>Demo project for Spring Boot</description>
+	<name>mypostsapp</name>
+	<description></description>
 
 	<properties>
 		<java.version>1.8</java.version>

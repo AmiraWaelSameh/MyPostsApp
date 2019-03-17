@@ -1,11 +1,11 @@
-package com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.service;
+package com.myposts.springboot.rest.app.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.model.User;
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.repositories.UserRepository;
+import com.myposts.springboot.rest.app.model.User;
+import com.myposts.springboot.rest.app.repositories.UserRepository;
 
 @Service
 public class UserService {

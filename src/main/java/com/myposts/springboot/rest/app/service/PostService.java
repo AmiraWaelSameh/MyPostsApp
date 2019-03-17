@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.service;
+package com.myposts.springboot.rest.app.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.model.Post;
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.model.StatusType;
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.model.User;
-import com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.repositories.PostRepository;
+import com.myposts.springboot.rest.app.model.Post;
+import com.myposts.springboot.rest.app.model.StatusType;
+import com.myposts.springboot.rest.app.model.User;
+import com.myposts.springboot.rest.app.repositories.PostRepository;
 
 @Service
 public class PostService {

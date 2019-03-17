@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.rest.example.springboot2jpawithhibernateandh2.model;
+package com.myposts.springboot.rest.app.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

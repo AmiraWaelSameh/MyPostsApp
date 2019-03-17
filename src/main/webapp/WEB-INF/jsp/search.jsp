@@ -4,19 +4,19 @@
 	<head>
 	<title>My Posts</title>
 	<link rel="stylesheet" href="/css/loginStyling.css"/>
+	<script src="/js/search.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
-	    <form method="post">
-	        Search : <input type="text" name="searchContent" />
-	        <button type="submit">Search</button>
-	        <font color="red">${errorMessage}</font>
+	    <form action="javascript:search()">
+	        Search : <input type="text" id="searchContent" />
+	        <button>Search</button>
 	    </form>
-	    <h3>Search Results:</h3>
-	    <font color="blue" class="emptyMessage">${emptySearchMessage}</font>
-	    <c:forEach items="${posts}" var="element"> 
-	    	<ul>"${element.content}" by ${element.user.userName }</ul>
-		</c:forEach>
+	    <h3></h3>
+	    <font color="blue" id="emptyMessage"></font>
+	    <div id="searchResults">
+	    </div>
     	<a href="/home" class="back">Back to home</a>
     </body>
 
